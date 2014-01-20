@@ -1,2 +1,10 @@
+TTree
 *.zip
 *_tmp
+*.dot
+*.tree
+*.gim
+*.vim
+*.roc
+*.tree
+*.log

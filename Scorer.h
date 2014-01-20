@@ -13,8 +13,8 @@
 #include "Score.h"
 #include "ScoreInfo.h"
 #include "ContingencyTable.h"
-#include "TToydb.h"
 #include "DB.h"
+#include "BlockDB.h"
 #include "ClassicTree.h"
 #include "GStump.h"
 #include <vector>
