@@ -1,7 +1,6 @@
-TTree-source
-============
+### TTree-source
 
-Exploiting SNP correlations within Random Forest for Genome-Wide Association Studies
+#### Exploiting SNP correlations within Random Forest for Genome-Wide Association Studies
 
 The primary goal of genome-wide association studies (GWAS) is to discover variants that could lead, in isolation or in combination, to a particular trait or disease. Standard approaches to GWAS however are usually based on univariate hypothesis tests and therefore can account neither for correlations due to linkage disequilibrium nor for combinations of several markers. To discover and leverage such potential multivariate interactions, we propose in this work an extension of the Random Forest algorithm tailored for structured GWAS data.
 
