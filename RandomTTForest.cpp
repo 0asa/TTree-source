@@ -27,7 +27,7 @@ double RandomTTForest::learn() {
 	clock_t clock_start = clock();
 	for (int t = 0 ; t < nbtree ; ++t) {
 		fprintf(stderr, "# TTree %3d ",t+1);
-		term[t] = new ClassicNodeTree((BlockDB*)db,k);
+		term[t] = new ClassicNodeTree((BlockDB*)db,k, nmin);
 		term[t]->setKint(kint);
 		//term[t]->setMaxComplexity(2);
 		term[t]->setGroupCand(groupcand);
