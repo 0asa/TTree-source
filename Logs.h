@@ -11,6 +11,7 @@
 #define __LOGS__
 #include <string>
 #include <vector>
+#include <cstdio>
 
 class Logs {
 private:
@@ -23,19 +24,19 @@ private:
 	FILE* _tree;
 	std::string prefix;
 	unsigned int counter;
-	
+
 	void init() {
 		// write date into log
 		time_t theTime;
-		time( &theTime );   
-		tm *t = localtime( &theTime );  
+		time( &theTime );
+		tm *t = localtime( &theTime );
 		fprintf(_main,"Time : %s",asctime(t));
 		fprintf(_main,"Prefix output : %s\n",prefix.c_str());
 	}
-	
+
 	void prefixit() {
 		char tmp[256];
-		sprintf(tmp, "%s_%04d.log",prefix.c_str(),counter);		_main = fopen(tmp,"wb");			
+		sprintf(tmp, "%s_%04d.log",prefix.c_str(),counter);		_main = fopen(tmp,"wb");
 		sprintf(tmp, "%s_%04d.roc",prefix.c_str(),counter);		_roc = fopen(tmp,"wb");
 		sprintf(tmp, "%s_%04d.vim",prefix.c_str(),counter);		_varimp = fopen(tmp,"wb");
 		sprintf(tmp, "%s_%04d.gim",prefix.c_str(),counter);		_groupimp = fopen(tmp,"wb");
@@ -52,15 +53,15 @@ public:
 	FILE* groupimp() { return _groupimp; }
 	FILE* dot()		 { return _dot; }
 	FILE* tree()	 { return _tree; }
-	
+
 	//void err(char* s) {
 	//	fprintf(_err,"%s",s);
 	//}
-	
+
 	void main(const char* s) {
 		fprintf(_main,"%s",s);
 	}
-	
+
 	Logs(char* p = NULL, unsigned int c = 0) {
 		counter = c;
 		if (p == NULL) {
@@ -77,7 +78,7 @@ public:
 			prefixit();
 		}
 	}
-	
+
 	void flush() {
 		fflush(_main);
 		//fflush(_err);
@@ -87,7 +88,7 @@ public:
 		fflush(_dot);
 		fflush(_tree);
 	}
-	
+
 	void inc() {
 		counter++;
 		fclose(_main);
@@ -99,8 +100,8 @@ public:
 		fclose(_tree);
 		prefixit();
 	}
-	
-	~Logs() { 
+
+	~Logs() {
 		fclose(_main);
 		//fclose(_err);
 		fclose(_roc);

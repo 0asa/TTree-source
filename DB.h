@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdio>
 #include "ScoreInfo.h"
 
 #define NUMERICAL 0
@@ -23,7 +24,7 @@
 class DB {
 private:
 	unsigned int nbobject;
-	
+
 	unsigned int nbclass;
 	std::vector<double> weight;
 	unsigned int type;
@@ -31,7 +32,7 @@ public:
 	DB();
 	DB(int nbo,int nba);
 	~DB();
-	
+
 	void setType(unsigned int t = NUMERICAL) { type = t; }
 	unsigned int getType() const { return type; }
 	double getWeight(unsigned int i) const;
@@ -50,8 +51,8 @@ public:
 	void getLRSet(ScoreInfo &si, std::vector<unsigned int> &set,
 					  std::vector<unsigned int> &left, std::vector<unsigned int> &right);
 	unsigned int getNbClass() const { return nbclass ; }
-	
-	
+
+
 protected:
 	void print(FILE* out = stdout, bool all = false) const;
 	unsigned int nbatt;

@@ -2,6 +2,7 @@
 #define __CONTINGENCYTABLE__
 
 #include <vector>
+#include <cstdio>
 
 class ContingencyTable {
 private:
@@ -25,12 +26,12 @@ public:
 	void reset();
 	void resetLessGeq();
 	void print();
-	
+
 	bool isConst() ;
 	std::vector<double> getPossibleTh();
 	bool isClassEmpty(unsigned int c) const ;
 	bool isSymbolEmpty(unsigned int s) const;
-	
+
 	double totalLess() const;
 	double totalGeq()  const;
 	std::vector<double> getLess() const;

@@ -13,10 +13,10 @@ all:
 	@echo ''
 	@echo 'Linking and Building executable'
 	@echo '-------------------------------'
-	gcc -o $(TARGET) main.cpp *.o -lstdc++
+	gcc -o $(TARGET) main.cpp *.o -lstdc++ -lm
 	@echo ''
 	@echo 'Removing object files'
-	@echo '---------------------'	
+	@echo '---------------------'
 	rm *.o
 
 clean:

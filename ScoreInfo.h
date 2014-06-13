@@ -11,6 +11,7 @@
 #define __SCOREINFO__
 
 #include <iostream>
+#include <cstdio>
 //#include "ClassicTree.h"
 
 class ClassicTree;
