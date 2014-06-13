@@ -13,6 +13,8 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
 #include "StrTools.h"
 
 //#define SETREP unsigned int
@@ -25,7 +27,7 @@ public:
 	template<class T> static void applyMap(std::vector<T> &v,std::vector<int> &map);
 	template<class T> static void print(std::vector<T> &v, int start = -1, int end = -1);
 	static std::vector<int> permutationMap(int nb);
-	
+
 	static std::vector<unsigned int> readSet(std::string file) {
 		std::vector<unsigned int> ret;
 		std::ifstream fs(file.c_str());
@@ -46,10 +48,10 @@ public:
 			}
 			++ln;
 		}
-		fs.close();	
+		fs.close();
 		return ret;
 	}
-	
+
 	static std::vector<unsigned int> readStartEndSet(std::string file) {
 		std::vector<unsigned int> ret;
 		std::ifstream fs(file.c_str());
@@ -81,8 +83,8 @@ template<class T> std::vector<T> Sampler::random(std::vector<T> &v, int nb) {
 	std::vector<T> ret(nb);
 	std::vector<T> tmp(v);
 	Sampler::shake(tmp,nb);
-	if (nb<v.size()) 
-		for (int i = 0 ; i < nb ; ++i) 
+	if (nb<v.size())
+		for (int i = 0 ; i < nb ; ++i)
 			ret[i] = tmp[i];
 	else
 		return tmp;
@@ -103,7 +105,7 @@ template<class T> void Sampler::shake(std::vector<T> &v, int s) {
 template<class T> std::vector<T> Sampler::bootstrap(std::vector<T> &v) {
 	std::vector<T> ret(v.size());
 	for (int i = 0 ; i < v.size() ; ++i)
-		ret[i] = v[rand()%v.size()]; 
+		ret[i] = v[rand()%v.size()];
 	return ret;
 }
 
@@ -111,7 +113,7 @@ template<class T> void Sampler::print(std::vector<T> &v, int start,int end) {
 	if (v.size() == 0) std::cout << "Empty vector" << std::endl;
 	if (start < 0) start = 0;
 	if (end < 0 || end < start || end > v.size()) end = v.size();
-	for (int i = start ; i < end ; ++i) 
+	for (int i = start ; i < end ; ++i)
 		std::cout << v[i] << ",";
 	std::cout << std::endl;
 }

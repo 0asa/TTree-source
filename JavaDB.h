@@ -11,6 +11,8 @@
 #define __JAVADB__
 
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include "BlockDB.h"
 
 class JavaDB : public BlockDB {

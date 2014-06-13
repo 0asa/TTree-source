@@ -11,6 +11,7 @@
 #define __PROBAS__
 
 #include <vector>
+#include <stdio.h>
 
 class Probas {
 private:
@@ -34,7 +35,7 @@ public:
 		std::vector<double>(probas.begin(),probas.end()).swap(probas);
 		std::vector<unsigned short int>(realclass.begin(),realclass.end()).swap(realclass);
 	};
-	
+
 };
 
 #endif

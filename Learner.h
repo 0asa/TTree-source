@@ -11,6 +11,7 @@
 #define __LEARNER__
 
 #include <vector>
+#include <algorithm>
 #include "DB.h"
 #include "Node.h"
 #include "Result.h"
@@ -32,11 +33,11 @@ public:
 	void printVimp(FILE* out = stdout, bool nozero = true) const;
 	std::vector<float> getVimp(bool norm = true) const;
 	VimpList getVimpCompact(bool norm) const;
-	
+
 	virtual double learn() = 0;
 	virtual Result test() = 0;
 	virtual Result test(unsigned int obj) = 0;
-	virtual void test(Result &result, unsigned int obj) = 0; 
+	virtual void test(Result &result, unsigned int obj) = 0;
 	virtual Result test(std::vector<unsigned int> *set) = 0;
 	virtual void computeVimp() = 0;
 	virtual void computeVimp(std::vector<float> &vim, std::vector<unsigned int> &set) = 0;
@@ -51,9 +52,9 @@ protected:
 	std::vector<unsigned int> *ls;
 	std::vector<unsigned int> *ts;
 	std::vector<unsigned int> *cand;
-	std::vector<float> vimp; 
-	Node *root;	
-	
+	std::vector<float> vimp;
+	Node *root;
+
 	void normalizeVimp();
 	void resetVimp();
 };

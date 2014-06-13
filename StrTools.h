@@ -10,6 +10,7 @@
 #ifndef __STRTOOLS__
 #define __STRTOOLS__
 #include <string>
+#include <cstring>
 #include <vector>
 
 class StrTools {
@@ -27,8 +28,8 @@ public:
 		delete[] strcopy;
 		return ret;
 	}
-	
+
 };
 
-//std::vector<std::string> StrTools::explode(std::string &str, char* delim) 
+//std::vector<std::string> StrTools::explode(std::string &str, char* delim)
 #endif
